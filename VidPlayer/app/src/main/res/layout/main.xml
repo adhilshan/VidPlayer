@@ -1,0 +1,95 @@
+<androidx.drawerlayout.widget.DrawerLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:app="http://schemas.android.com/apk/res-auto"
+	xmlns:tools="http://schemas.android.com/tools"
+	android:id="@+id/_drawer"
+	android:layout_width="match_parent"
+	android:layout_height="match_parent"
+	tools:openDrawer="start">
+	<androidx.coordinatorlayout.widget.CoordinatorLayout
+		android:id="@+id/_coordinator"
+		android:layout_width="match_parent"
+		android:layout_height="match_parent">
+		<com.google.android.material.appbar.AppBarLayout
+			android:id="@+id/_app_bar"
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content"
+			android:theme="@style/AppTheme.AppBarOverlay">
+			<androidx.appcompat.widget.Toolbar
+				android:id="@+id/_toolbar"
+				android:layout_width="match_parent"
+				android:layout_height="?attr/actionBarSize"
+				android:background="?attr/colorPrimary"
+				app:popupTheme="@style/AppTheme.PopupOverlay" />
+		</com.google.android.material.appbar.AppBarLayout>
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="match_parent"
+			android:orientation="vertical"
+			app:layout_behavior="@string/appbar_scrolling_view_behavior">
+			<LinearLayout
+				android:id="@+id/linear1"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:background="#FFFFFF"
+				android:gravity="center_horizontal|center_vertical"
+				android:orientation="vertical">
+				<LinearLayout
+					android:id="@+id/toolbar"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:layout_marginBottom="10dp"
+					android:padding="8dp"
+					android:gravity="center_vertical"
+					android:orientation="horizontal">
+					<ImageView
+						android:id="@+id/imageview1"
+						android:layout_width="wrap_content"
+						android:layout_height="match_parent"
+						android:src="@drawable/ic_dehaze_black"
+						android:scaleType="center" />
+					<TextView
+						android:id="@+id/textview1"
+						android:layout_width="wrap_content"
+						android:layout_height="wrap_content"
+						android:padding="8dp"
+						android:text="Vid-Player +"
+						android:textSize="18sp"
+						android:textStyle="bold"
+						android:textColor="#1E2632" />
+				</LinearLayout>
+				<ListView
+					android:id="@+id/listview1"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:dividerHeight="0dp"
+					android:divider="@null"
+					android:choiceMode="none"
+					android:layout_weight="1" />
+				<ListView
+					android:id="@+id/listview2"
+					android:layout_width="match_parent"
+					android:layout_height="wrap_content"
+					android:dividerHeight="0dp"
+					android:divider="@null"
+					android:choiceMode="none"
+					android:layout_weight="1" />
+			</LinearLayout>
+		</LinearLayout>
+		<com.google.android.material.floatingactionbutton.FloatingActionButton
+			android:id="@+id/_fab"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_margin="16dp"
+			android:layout_gravity="right|bottom"
+			app:srcCompat="@drawable/ic_file_download_white" />
+	</androidx.coordinatorlayout.widget.CoordinatorLayout>
+	<LinearLayout
+		android:id="@+id/_nav_view"
+		android:layout_width="320dp"
+		android:layout_height="match_parent"
+		android:layout_gravity="start"
+		android:background="#EEEEEE">
+		<include layout="@layout/_drawer_main" />
+	</LinearLayout>
+</androidx.drawerlayout.widget.DrawerLayout>
